@@ -24,7 +24,7 @@ class SendOtp {
      * @returns {string} Base URL for MSG91 api call
      */
     static getBaseURL() {
-        return "https://control.msg91.com/api/";
+        return "https://world.msg91.com/api/";
     }
 
     /**
@@ -129,6 +129,7 @@ class SendOtp {
                 formKey = 'formData';
             }
             options[formKey] = params;
+            options.qs.route = 4;
         }
 
         request(options, function(error, response, data) {
